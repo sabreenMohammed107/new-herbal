@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-12 text-center p-3">
                     <h2 class="quote-sub-header">
-                        {{ Html::image("images/leaf.png", 'alt text', array('class' => 'logo-leaf')) }}
+                        {{ Html::image("public/images/leaf.png", 'alt text', array('class' => 'logo-leaf')) }}
                         @if( LaravelLocalization::getCurrentLocale() === "ar")
                         {{$product->arabic_name}}
                         @else
@@ -28,14 +28,14 @@
                             @foreach($product->productImages as $productImage)
                             <div class="row">
                                 <div class="col-md-12 mb-4">
-                                    {{ Html::image("images/Product/$productImage->image", 'alt text', array('class' => 'img-fluid w100')) }}
+                                    {{ Html::image("public/images/Product/$productImage->image", 'alt text', array('class' => 'img-fluid w100')) }}
                                 </div>
                             </div>
                             @endforeach
                         @endif
                     </div>
                     <div class="col-md-9">
-                        {{ Html::image("images/Product/$product->image", 'alt text', array('class' => 'img-fluid w100 product-main-image')) }}
+                        {{ Html::image("public/images/Product/$product->image", 'alt text', array('class' => 'img-fluid w100 product-main-image')) }}
                     </div>
                 </div>
 
@@ -140,8 +140,8 @@
                             <br>
                             @if($product->video != null)
                             <video height="350" class="full-width border-box" loop=""  controls="">
-                                <source src="{{ asset('public/images/Product/'.$product->video.'')}}" type="video/mp4">
-                                <source src="{{ asset('public/images/Product/'.$product->video.'')}}" type="video/ogg">
+                                <source src="{{ asset('public/public/images/Product/'.$product->video.'')}}" type="video/mp4">
+                                <source src="{{ asset('public/public/images/Product/'.$product->video.'')}}" type="video/ogg">
                                 Your browser does not support the video tag.
                             </video>
                             @endif
@@ -160,7 +160,7 @@
             @foreach($products as $itemproduct)
             <div class="col-md-4">
                 <div class="row p-3 text-center">
-                    {{ Html::image("images/Product/$itemproduct->image", 'alt text', array('class' => 'full-width img-fluid related-product-imgae')) }}
+                    {{ Html::image("public/images/Product/$itemproduct->image", 'alt text', array('class' => 'full-width img-fluid related-product-imgae')) }}
                     <div class="product-details mt-3">
                         <h5  class="product-title uppercase">
                             @if( LaravelLocalization::getCurrentLocale() === "ar")

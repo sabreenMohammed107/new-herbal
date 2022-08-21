@@ -2,14 +2,14 @@
 @section('content')
 <div  class="button-header mb-4 white-background p-3">
     <div class="row">
-        <div class="col-md-12 reversible-text">                                
-            <a href="{{ LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(),"sliderImage/create") }}" class="red-button btn  pointer white-text"> 
+        <div class="col-md-12 reversible-text">
+            <a href="{{ LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(),"sliderImage/create") }}" class="red-button btn  pointer white-text">
                 {{ Lang::get('headings.NewSliderImage')}}
             </a>
         </div>
     </div>
 </div>
-<div class="white-background content-details">                        
+<div class="white-background content-details">
     <div class="content-header white-text">
         <h4 class="p-3 f16 f400 reversible-text"> {{Lang::get('headings.sliderImages')}} </h4>
         <div class="clearfix"></div>
@@ -17,7 +17,7 @@
     <div class="p-3"  >
         <div class="row justify-content-end mb-4">
             <div class="col-md-9 reversible-text">
-                <span class="found"> {{Lang::get('headings.Found')}} : 
+                <span class="found"> {{Lang::get('headings.Found')}} :
                     {{$count}}
                 </span>
             </div>
@@ -42,11 +42,11 @@
                             </thead>
                             <tbody>
                                 <?php $i = 1; ?>
-                                @foreach($sliderImages as $sliderImage)                           
-                                <tr>                               
+                                @foreach($sliderImages as $sliderImage)
+                                <tr>
                                     <td> <?php echo $i ?></td>
                                     <td>
-                                        {{ Html::image("images/SliderImage/$sliderImage->image", 'course', array('class' => 'img-size img-fluid')) }}
+                                        {{ Html::image("public/images/SliderImage/$sliderImage->image", 'course', array('class' => 'img-size img-fluid')) }}
                                     </td>
                                     <td>
                                         @if($sliderImage->active ==1)
@@ -58,13 +58,13 @@
                                     <td>
                                         <i class="fa fa-pencil edit" aria-hidden="true"  title="edit" data-toggle="modal" data-target="#EditModal{{$sliderImage->sliderImage_id}}">
                                         </i>
-                                    </td>  
+                                    </td>
                                 </tr>
                                 <?php $i++; ?>
                                 @endforeach
-                            </tbody> 
+                            </tbody>
                         </table>
-                        @foreach($sliderImages as $sliderImage)  
+                        @foreach($sliderImages as $sliderImage)
                         <div class="modal fade " style="direction:ltr !important" id="EditModal{{$sliderImage->id}}" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -118,7 +118,7 @@
         </div>
         <div class="col-md-9">
             <nav class="paginate margin-20 pl-10 pr-10 pt-2 ">
-                {{ $sliderImages->render() }}  
+                {{ $sliderImages->render() }}
             </nav>
         </div>
     </div>

@@ -49,7 +49,7 @@ class ProductCategoryController extends Controller {
         }
         if ($file = $request->file('image')) {
             $name = $file->getClientOriginalName();
-            $file->move('images/ProductCategory', $name);
+            $file->move('public/images/ProductCategory', $name);
             $requestData['image'] = $name;
         }
         $this->validate($request, [
@@ -98,7 +98,7 @@ class ProductCategoryController extends Controller {
         }
         if ($file = $request->file('image')) {
             $name = $file->getClientOriginalName();
-            $file->move('images/ProductCategory', $name);
+            $file->move('public/images/ProductCategory', $name);
             $requestData['image'] = $name;
         }
         $this->validate($request, [

@@ -28,7 +28,7 @@ and open the template in the editor.
                     <nav class="row main-navbar white-background">
                         <div class="col-md-4 brand">
                             <a class="navbar-brand" href="#">
-                                <img src="{{ asset('public/images/logo.png') }}"  class="img-fluid bubble" width="100" alt="Senior Steps"/>
+                                <img src="{{ asset('public/public/images/logo.png') }}"  class="img-fluid bubble" width="100" alt="Senior Steps"/>
                             </a>
                         </div>
                         <div class="col-md-4 text-right">

@@ -55,7 +55,7 @@ class NewSController extends Controller {
         ]);
         if ($file = $request->file('image')) {
             $name = $file->getClientOriginalName();
-            $file->move('images/News', $name);
+            $file->move('public/images/News', $name);
             $requestData['image'] = $name;
         }
         $requestData['arabic_name'] = trim($requestData['arabic_name']);
@@ -112,7 +112,7 @@ class NewSController extends Controller {
         ]);
         if ($file = $request->file('image')) {
             $name = $file->getClientOriginalName();
-            $file->move('images/News', $name);
+            $file->move('public/images/News', $name);
             $requestData['image'] = $name;
         }
         $requestData['arabic_name'] = trim($requestData['arabic_name']);

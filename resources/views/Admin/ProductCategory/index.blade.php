@@ -2,14 +2,14 @@
 @section('content')
 <div  class="button-header mb-4 white-background p-3">
     <div class="row">
-        <div class="col-md-12 reversible-text">                                
-            <a href="{{ LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(),"productCategory/create") }}" class="red-button btn  pointer white-text"> 
+        <div class="col-md-12 reversible-text">
+            <a href="{{ LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(),"productCategory/create") }}" class="red-button btn  pointer white-text">
                 {{ Lang::get('headings.NewProductCategory')}}
             </a>
         </div>
     </div>
 </div>
-<div class="white-background content-details">                        
+<div class="white-background content-details">
     <div class="content-header white-text">
         <h4 class="p-3 f16 f400 reversible-text"> {{Lang::get('headings.productCategories')}} </h4>
         <div class="clearfix"></div>
@@ -17,7 +17,7 @@
     <div class="p-3"  >
         <div class="row justify-content-end mb-4">
             <div class="col-md-9 reversible-text">
-                <span class="found"> {{Lang::get('headings.Found')}} : 
+                <span class="found"> {{Lang::get('headings.Found')}} :
                     {{$count}}
                 </span>
             </div>
@@ -34,10 +34,10 @@
                             <thead class="white-text thead-background">
                                 <tr>
                                     <th>#</th>
-                                    <th>{{Lang::get('labels.arabic_name')}}</th>   
-                                    <th>{{Lang::get('labels.english_name')}}</th>    
-                                    <th>{{Lang::get('labels.image')}}</th> 
-                                    <th>{{Lang::get('labels.active')}}</th>   
+                                    <th>{{Lang::get('labels.arabic_name')}}</th>
+                                    <th>{{Lang::get('labels.english_name')}}</th>
+                                    <th>{{Lang::get('labels.image')}}</th>
+                                    <th>{{Lang::get('labels.active')}}</th>
                                     <th><i class="fa fa-trash"></i></th>
                                     <th>
                                         <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -46,14 +46,14 @@
                             </thead>
                             <tbody>
                                 <?php $i = 1; ?>
-                                @foreach($productCategories as $productCategory)                           
-                                <tr>                               
-                                    <td> <?php echo $i ?></td>        
+                                @foreach($productCategories as $productCategory)
+                                <tr>
+                                    <td> <?php echo $i ?></td>
                                     <td>{{$productCategory->arabic_name}}</td>
 
                                     <td>{{$productCategory->english_name}}</td>
                                     <td>
-                                        {{ Html::image("images/ProductCategory/$productCategory->image", 'alt text', array('class' => 'pb-3 img-fluid img-size')) }}
+                                        {{ Html::image("public/images/ProductCategory/$productCategory->image", 'alt text', array('class' => 'pb-3 img-fluid img-size')) }}
                                     </td>
                                     <td>
                                         @if($productCategory->active ==1)
@@ -69,13 +69,13 @@
                                     <td>
                                         <i class="fa fa-pencil edit" aria-hidden="true"  title="edit" data-toggle="modal" data-target="#EditModal{{$productCategory->id}}">
                                         </i>
-                                    </td>  
+                                    </td>
                                 </tr>
                                 <?php $i++; ?>
                                 @endforeach
-                            </tbody> 
+                            </tbody>
                         </table>
-                        @foreach($productCategories as $productCategory)  
+                        @foreach($productCategories as $productCategory)
                         <div class="modal fade" id="DeleteModal{{$productCategory->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -89,12 +89,12 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="modal-body"> 
+                                    <div class="modal-body">
                                         <div class="deleteContent text-left pl-3 mt-2 reversible-text" style="display: block;">
-                                            {{Lang::get('headings.DeleteConfirm')}} 
+                                            {{Lang::get('headings.DeleteConfirm')}}
                                             (
                                             <span class="yellow-text">
-                                                @if( LaravelLocalization::getCurrentLocale() === "ar")                        
+                                                @if( LaravelLocalization::getCurrentLocale() === "ar")
                                                 {{$productCategory->arabic_name}}
                                                 @else
                                                 {{$productCategory->english_name}}
@@ -113,7 +113,7 @@
                             </div>
                         </div>
                         @endforeach
-                        @foreach($productCategories as $productCategory)  
+                        @foreach($productCategories as $productCategory)
                         <div class="modal fade" id="EditModal{{$productCategory->id}}" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -134,7 +134,7 @@
                                                 {!! Form::label('arabic_name',trans('labels.arabic_name')) !!} : <span class="star"> * </span>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="input-group">                      
+                                                <div class="input-group">
                                                     {!! Form::text('arabic_name',$productCategory->arabic_name,['class'=>'form-control','aria-required'=>"true" ,'aria-invalid'=>"false",'id'=>'arabic_name'])  !!}
                                                 </div>
                                             </div>
@@ -145,7 +145,7 @@
                                                 {!! Form::label('english_name',trans('labels.english_name')) !!} : <span class="star"> * </span>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="input-group"> 
+                                                <div class="input-group">
                                                     {!! Form::text('english_name',$productCategory->english_name,['class'=>'form-control','aria-required'=>"true" ,'aria-invalid'=>"false",'id'=>'english_name'])  !!}
 
                                                 </div>
@@ -197,7 +197,7 @@
         </div>
         <div class="col-md-9">
             <nav class="paginate margin-20 pl-10 pr-10 pt-2 ">
-                {{ $productCategories->render() }}  
+                {{ $productCategories->render() }}
             </nav>
         </div>
     </div>

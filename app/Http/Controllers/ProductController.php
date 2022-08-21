@@ -51,12 +51,12 @@ class ProductController extends Controller {
         $requestData = $request->all();
         if ($file = $request->file('image')) {
             $name = $file->getClientOriginalName();
-            $file->move('images/Product', $name);
+            $file->move('public/images/Product', $name);
             $requestData['image'] = $name;
         }
         if ($file = $request->file('video')) {
             $name = $file->getClientOriginalName();
-            $file->move('images/Product', $name);
+            $file->move('public/images/Product', $name);
             $requestData['video'] = $name;
         }
         if ($request->get('active') == "on") {
@@ -114,12 +114,12 @@ class ProductController extends Controller {
         $requestData = $request->except('_method', '_token');
         if ($file = $request->file('image')) {
             $name = $file->getClientOriginalName();
-            $file->move('images/Product', $name);
+            $file->move('public/images/Product', $name);
             $requestData['image'] = $name;
         }
         if ($file = $request->file('video')) {
             $name = $file->getClientOriginalName();
-            $file->move('images/Product', $name);
+            $file->move('public/images/Product', $name);
             $requestData['video'] = $name;
         }
         if ($request->get('active') == "on") {
@@ -259,7 +259,7 @@ class ProductController extends Controller {
         if ($files = $request->file('images')) {
             foreach ($files as $file) {
                 $name = $file->getClientOriginalName();
-                $file->move('images/Product', $name);
+                $file->move('public/images/Product', $name);
                 ProductImage::create(['image' => $name, 'product_id' => $requestData['product']]);
             }
         }

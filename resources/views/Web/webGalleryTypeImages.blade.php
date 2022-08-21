@@ -13,7 +13,7 @@
             <div class="carousel-item">
                 @endif
                 <p class="quote-paragraph">
-                    {{ Html::image("images/Gallery/$gallery->image", 'alt text', array('class' => 'd-block w-100')) }}
+                    {{ Html::image("public/images/Gallery/$gallery->image", 'alt text', array('class' => 'd-block w-100')) }}
                 </p>
             </div>
             @endforeach
@@ -21,23 +21,23 @@
         </div>
     </div>
 </div>-->
-<!--  {{ Html::image("images/ajax-loader.gif", 'alt text', array('style' =>"display:none;margin:0px auto;width:200px;height:200px;transition:all 1s;",'id'=>'loading-image')) }}-->
+<!--  {{ Html::image("public/images/ajax-loader.gif", 'alt text', array('style' =>"display:none;margin:0px auto;width:200px;height:200px;transition:all 1s;",'id'=>'loading-image')) }}-->
 <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:960px;height:480px;overflow:hidden;visibility:hidden;background-color:#24262e;">
     <!-- Loading Screen -->
 <!--    <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
-        {{ Html::image("images/ajax-loader.gif", 'alt text', array('style' =>"margin-top:-19px;position:relative;top:50%;width:38px;height:38px;")) }}
+        {{ Html::image("public/images/ajax-loader.gif", 'alt text', array('style' =>"margin-top:-19px;position:relative;top:50%;width:38px;height:38px;")) }}
     </div>-->
-{{ Html::image("images/ajax-loader.gif", 'alt text', array('style' =>"opacity:0;transition:all 1s;",'id'=>'loading-image')) }}
+{{ Html::image("public/images/ajax-loader.gif", 'alt text', array('style' =>"opacity:0;transition:all 1s;",'id'=>'loading-image')) }}
 
     <div data-u="slides" style="cursor:default;position:relative;top:0px;left:240px;width:720px;height:480px;overflow:hidden;">
         @if(count($galleries)>0)
         @foreach ($galleries as $key =>$gallery)
         <div>
-            {{ Html::image("images/Gallery/$gallery->image", 'alt text', array('data-u' =>"image")) }}
-            {{ Html::image("images/Gallery/$gallery->image", 'alt text', array('data-u' =>"thumb",'class'=>
+            {{ Html::image("public/images/Gallery/$gallery->image", 'alt text', array('data-u' =>"image")) }}
+            {{ Html::image("public/images/Gallery/$gallery->image", 'alt text', array('data-u' =>"thumb",'class'=>
                  'img-thumb-gallery')) }}
-<!--            <img data-u="image" src="images/004.jpg" />
-            <img data-u="thumb" src="images/004-s99x66.jpg" />-->
+<!--            <img data-u="image" src="public/images/004.jpg" />
+            <img data-u="thumb" src="public/images/004-s99x66.jpg" />-->
         </div>
         @endforeach()
         @endif

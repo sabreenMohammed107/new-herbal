@@ -2,14 +2,14 @@
 @section('content')
 <div  class="button-header mb-4 white-background p-3">
     <div class="row">
-        <div class="col-md-12 reversible-text">                                
-            <a href="{{ LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(),"certifcate/create") }}" class="red-button btn  pointer white-text"> 
+        <div class="col-md-12 reversible-text">
+            <a href="{{ LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(),"certifcate/create") }}" class="red-button btn  pointer white-text">
                 {{ Lang::get('headings.NewCertification')}}
             </a>
         </div>
     </div>
 </div>
-<div class="white-background content-details">                        
+<div class="white-background content-details">
     <div class="content-header white-text">
         <h4 class="p-3 f16 f400 reversible-text"> {{Lang::get('headings.certifications')}} </h4>
         <div class="clearfix"></div>
@@ -17,7 +17,7 @@
     <div class="p-3"  >
         <div class="row justify-content-end mb-4">
             <div class="col-md-9 reversible-text">
-                <span class="found"> {{Lang::get('headings.Found')}} : 
+                <span class="found"> {{Lang::get('headings.Found')}} :
                     {{$count}}
                 </span>
             </div>
@@ -35,9 +35,9 @@
                                 <tr>
                                     <th>#</th>
                                     <th>{{Lang::get('labels.name')}}</th>
-                                    <th>{{Lang::get('labels.number')}}</th> 
-                                    <th>{{Lang::get('labels.image')}}</th> 
-                                    <th>{{Lang::get('labels.active')}}</th>   
+                                    <th>{{Lang::get('labels.number')}}</th>
+                                    <th>{{Lang::get('labels.image')}}</th>
+                                    <th>{{Lang::get('labels.active')}}</th>
                                     <th><i class="fa fa-trash"></i></th>
                                     <th>
                                         <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -49,13 +49,13 @@
                             </thead>
                             <tbody>
                                 <?php $i = 1; ?>
-                                @foreach($certifications as $certification)                           
-                                <tr>                               
-                                    <td> <?php echo $i ?></td>                    
+                                @foreach($certifications as $certification)
+                                <tr>
+                                    <td> <?php echo $i ?></td>
                                     <td> {{$certification->name}} </td>
                                     <td> {{$certification->number}} </td>
                                     <td>
-                                        {{ Html::image("images/Certification/$certification->image", 'alt text', array('class' => 'pb-3 img-fluid img-size')) }}
+                                        {{ Html::image("public/images/Certification/$certification->image", 'alt text', array('class' => 'pb-3 img-fluid img-size')) }}
                                     </td>
                                     <td>
                                         @if($certification->active ==1)
@@ -71,16 +71,16 @@
                                     <td>
                                         <i class="fa fa-pencil edit" aria-hidden="true"  title="edit" data-toggle="modal" data-target="#EditModal{{$certification->id}}">
                                         </i>
-                                    </td> 
+                                    </td>
                                     <td>
                                         <i class="fa fa-file-text-o view" aria-hidden="true" title="view certification" data-toggle="modal" data-target="#showModal{{$certification->id}}"></i>
                                     </td>
                                 </tr>
                                 <?php $i++; ?>
                                 @endforeach
-                            </tbody> 
+                            </tbody>
                         </table>
-                        @foreach($certifications as $certification)  
+                        @foreach($certifications as $certification)
                         <div class="modal fade" id="DeleteModal{{$certification->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -94,10 +94,10 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="modal-body"> 
+                                    <div class="modal-body">
                                         <div class="deleteContent text-left pl-3 mt-2 reversible-text" style="display: block;">
                                             {{Lang::get('headings.DeleteConfirm')}} (
-                                            <span class="yellow-text">                       
+                                            <span class="yellow-text">
                                                 {{$certification->name}}
                                             </span> ) !!
 
@@ -113,7 +113,7 @@
                             </div>
                         </div>
                         @endforeach
-                        @foreach($certifications as $certification)  
+                        @foreach($certifications as $certification)
                         <div class="modal fade" id="EditModal{{$certification->id}}" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -134,7 +134,7 @@
                                                 {!! Form::label('name',trans('labels.name')) !!} : <span class="star"> * </span>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="input-group">                      
+                                                <div class="input-group">
                                                     {!! Form::text('name',null,['class'=>'form-control','aria-required'=>"true" ,'aria-invalid'=>"false",'id'=>'name'])  !!}
                                                 </div>
                                             </div>
@@ -145,38 +145,38 @@
                                                 {!! Form::label('image',trans('labels.image')) !!} : <span class="star"> * </span>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="input-group">                      
+                                                <div class="input-group">
                                                     <input required type="file" class="form-control" name="image"  >
                                                 </div>
                                             </div>
                                             <div class="col-md-3 reversible-text text-left  pl-4">
-                                                {!! Form::label('number',trans('labels.number')) !!} : 
+                                                {!! Form::label('number',trans('labels.number')) !!} :
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="input-group">                      
+                                                <div class="input-group">
                                                     <input type="text" value="{{$certification->number}}" class="form-control" name="number" placeholder="number" >
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row form-group mb-4">
                                             <div class="col-md-3 reversible-text text-left  pl-4">
-                                                {!! Form::label('arabic_desc',trans('labels.arabic_desc')) !!} : 
+                                                {!! Form::label('arabic_desc',trans('labels.arabic_desc')) !!} :
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="input-group">                      
+                                                <div class="input-group">
                                                     <textarea class="form-control" name="arabic_desc" rows="3">{{$certification->arabic_desc}}</textarea>
                                                 </div>
                                             </div>
                                             <div class="col-md-3 reversible-text text-left  pl-4">
-                                                {!! Form::label('english_desc',trans('labels.english_desc')) !!} : 
+                                                {!! Form::label('english_desc',trans('labels.english_desc')) !!} :
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="input-group">   
+                                                <div class="input-group">
                                                     <textarea class="form-control" name="english_desc" rows="3">{{$certification->english_desc}}</textarea>
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="row form-group mb-4">
                                             <div class="col-md-3 reversible-text text-left  pl-4">
                                                 <label class="custom-control custom-checkbox">
@@ -203,7 +203,7 @@
                             </div>
                         </div>
                         @endforeach
-                        @foreach($certifications as $certification)  
+                        @foreach($certifications as $certification)
                         <div class="modal fade" id="showModal{{$certification->id}}" tabindex="-1" role="dialog" aria-labelledby="showModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -224,13 +224,13 @@
                                                     {{Lang::get('labels.name')}}:
                                                 </span>
                                             </div>
-                                            <div class="col-md-8 reversible-text text-left">                       
+                                            <div class="col-md-8 reversible-text text-left">
                                                 {{ $certification->name }}
                                             </div>
                                         </div>
                                         <div class="row p-3 border-bottom text-left">
                                             <div class="col-md-4 reversible-text text-left">
-                                                <span class="red-text f600"> 
+                                                <span class="red-text f600">
                                                     {{Lang::get('labels.number')}}:
                                                 </span>
                                             </div>
@@ -240,18 +240,18 @@
                                         </div>
                                         <div class="row p-3 border-bottom text-left">
                                             <div class="col-md-4 reversible-text text-left">
-                                                <span class="red-text f600"> 
+                                                <span class="red-text f600">
                                                     {{Lang::get('labels.image')}} :
                                                 </span>
                                             </div>
                                             <div class="col-md-8 reversible-text text-left">
-                                                {{ Html::image("images/Certification/$certification->image", 'alt text', array('class' => 'pb-3 img-fluid img-size')) }}
+                                                {{ Html::image("public/images/Certification/$certification->image", 'alt text', array('class' => 'pb-3 img-fluid img-size')) }}
 
                                             </div>
                                         </div>
                                         <div class="row p-3 border-bottom text-left">
                                             <div class="col-md-4 reversible-text text-left">
-                                                <span class="red-text f600"> 
+                                                <span class="red-text f600">
                                                     {{Lang::get('labels.arabic_desc')}}:
                                                 </span>
                                             </div>
@@ -261,7 +261,7 @@
                                         </div>
                                         <div class="row p-3 border-bottom text-left">
                                             <div class="col-md-4 reversible-text text-left">
-                                                <span class="red-text f600"> 
+                                                <span class="red-text f600">
                                                     {{Lang::get('labels.english_desc')}}:
                                                 </span>
                                             </div>
@@ -283,7 +283,7 @@
                                             </div>
                                         </div>
 
-                                    </div> 
+                                    </div>
                                     <div class="modal-footer ">
                                         <button type="button" class="btn add-button pointer white-text mb-4" data-dismiss="modal"> {{Lang::get('headings.Close')}} </button>
                                     </div>
@@ -301,7 +301,7 @@
         </div>
         <div class="col-md-9">
             <nav class="paginate margin-20 pl-10 pr-10 pt-2 ">
-                {{ $certifications->render() }}  
+                {{ $certifications->render() }}
             </nav>
         </div>
     </div>

@@ -5,10 +5,10 @@
                 <thead class="white-text thead-background">
                     <tr>
                         <th>#</th>
-                        <th>{{Lang::get('labels.arabic_name')}}</th>   
-                        <th>{{Lang::get('labels.english_name')}}</th>    
-                        <th>{{Lang::get('labels.image')}}</th> 
-                        <th>{{Lang::get('labels.active')}}</th>   
+                        <th>{{Lang::get('labels.arabic_name')}}</th>
+                        <th>{{Lang::get('labels.english_name')}}</th>
+                        <th>{{Lang::get('labels.image')}}</th>
+                        <th>{{Lang::get('labels.active')}}</th>
                         <th><i class="fa fa-trash"></i></th>
                         <th>
                             <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -17,16 +17,16 @@
                 </thead>
                 <tbody>
                     <?php $i = 1; ?>
-                    @foreach($productCategories as $productCategory)           
-                   
-                    <tr>                               
-                        <td> <?php echo $i ?></td>        
+                    @foreach($productCategories as $productCategory)
+
+                    <tr>
+                        <td> <?php echo $i ?></td>
                         <td>{{$productCategory->arabic_name}}</td>
 
                         <td>{{$productCategory->english_name}}</td>
-                        <td>   
+                        <td>
                             @if($productCategory->image != null)
-                              {{Html::image("images/ProductCategory/$productCategory->image", 'alt text', array('class' => 'pb-3 img-fluid img-size'))}}
+                              {{Html::image("public/images/ProductCategory/$productCategory->image", 'alt text', array('class' => 'pb-3 img-fluid img-size'))}}
                             @endif
                         </td>
                         <td>
@@ -43,13 +43,13 @@
                         <td>
                             <i class="fa fa-pencil edit" aria-hidden="true"  title="edit" data-toggle="modal" data-target="#EditModal{{$productCategory->id}}">
                             </i>
-                        </td>  
+                        </td>
                     </tr>
                     <?php $i++; ?>
                     @endforeach
-                </tbody> 
+                </tbody>
             </table>
-            @foreach($productCategories as $productCategory)  
+            @foreach($productCategories as $productCategory)
             <div class="modal fade" id="DeleteModal{{$productCategory->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
@@ -63,12 +63,12 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="modal-body"> 
+                        <div class="modal-body">
                             <div class="deleteContent text-left pl-3 mt-2 reversible-text" style="display: block;">
-                                {{Lang::get('headings.DeleteConfirm')}} 
+                                {{Lang::get('headings.DeleteConfirm')}}
                                 (
                                 <span class="yellow-text">
-                                    @if( LaravelLocalization::getCurrentLocale() === "ar")                        
+                                    @if( LaravelLocalization::getCurrentLocale() === "ar")
                                     {{$productCategory->arabic_name}}
                                     @else
                                     {{$productCategory->english_name}}
@@ -87,7 +87,7 @@
                 </div>
             </div>
             @endforeach
-            @foreach($productCategories as $productCategory)  
+            @foreach($productCategories as $productCategory)
             <div class="modal fade" id="EditModal{{$productCategory->id}}" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
@@ -108,7 +108,7 @@
                                     {!! Form::label('arabic_name',trans('labels.arabic_name')) !!} : <span class="star"> * </span>
                                 </div>
                                 <div class="col-md-3">
-                                    <div class="input-group">                      
+                                    <div class="input-group">
                                         {!! Form::text('arabic_name',$productCategory->arabic_name,['class'=>'form-control','aria-required'=>"true" ,'aria-invalid'=>"false",'id'=>'arabic_name'])  !!}
                                     </div>
                                 </div>
@@ -119,7 +119,7 @@
                                     {!! Form::label('english_name',trans('labels.english_name')) !!} : <span class="star"> * </span>
                                 </div>
                                 <div class="col-md-3">
-                                    <div class="input-group"> 
+                                    <div class="input-group">
                                         {!! Form::text('english_name',$productCategory->english_name,['class'=>'form-control','aria-required'=>"true" ,'aria-invalid'=>"false",'id'=>'english_name'])  !!}
 
                                     </div>

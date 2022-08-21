@@ -53,7 +53,7 @@ class CertificationController extends Controller
         $requestData = $request->all();
         if ($file = $request->file('image')) {
             $name = $file->getClientOriginalName();
-            $file->move('images/Certification', $name);
+            $file->move('public/images/Certification', $name);
              $requestData['image'] = $name;
         }
         if ($request->get('active') == "on") {
@@ -67,8 +67,8 @@ class CertificationController extends Controller
         if (isset($requestData['english_desc'])) {
             $requestData['english_desc'] =trim( $requestData['english_desc']);
         }
-        
-        
+
+
         Certification::create($requestData);
         return redirect('/certifcate');
     }
@@ -109,7 +109,7 @@ class CertificationController extends Controller
 
         if ($file = $request->file('image')) {
             $name = $file->getClientOriginalName();
-            $file->move('images/Certification', $name);
+            $file->move('public/images/Certification', $name);
              $requestData['image'] = $name;
         }
         if ($request->get('active') == "on") {
@@ -123,7 +123,7 @@ class CertificationController extends Controller
         if (isset($requestData['english_desc'])) {
             $requestData['english_desc'] =trim( $requestData['english_desc']);
         }
-        
+
         Certification::where('id', $id)->update($requestData);
         return redirect('/certifcate');
     }
@@ -142,7 +142,7 @@ class CertificationController extends Controller
             return response()->json(['sucess' => "Sucees to Delete", 'id' => $id]);
         }
     }
-    
+
     public function certificationSearch(Request $request) {
 //        $count = null;
         $certifications  = array();

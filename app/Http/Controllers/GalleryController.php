@@ -9,7 +9,7 @@ use App\Gallery;
 use Illuminate\Support\Facades\DB;
 
 class GalleryController extends Controller {
-    
+
     public function __construct() {
         $this->middleware('auth');
     }
@@ -47,7 +47,7 @@ class GalleryController extends Controller {
         //
         $gallery_types = GalleryType::where('active', 1)->get();
 //        foreach ($gallery_types as $key =>$value)
-//        {   
+//        {
 //            if(null !== Gallery::where('gallery_type_id',$value)->first())
 //            {
 //                $gallery_types->forget($key);
@@ -79,7 +79,7 @@ class GalleryController extends Controller {
             foreach ($files as $file) {
                 $name = $file->getClientOriginalName();
 //                dd($name);
-                $file->move('images/Gallery', $name);
+                $file->move('public/images/Gallery', $name);
                 Gallery::create(['image' => $name, 'gallery_type_id' => $requestData['gallery_type_id'], 'active' => $requestData['active']]);
 //                $images[] = $name;
             }
@@ -104,7 +104,7 @@ class GalleryController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        
+
     }
 
     /**

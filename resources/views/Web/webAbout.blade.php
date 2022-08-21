@@ -6,9 +6,9 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h2 class="quote-sub-header">
-                        {{ Html::image("images/leaf.png", 'alt text', array('class' => 'logo-leaf')) }}
+                        {{ Html::image("public/images/leaf.png", 'alt text', array('class' => 'logo-leaf')) }}
                         {{ Lang::get('headings.about')}}
-                    </h2>                           
+                    </h2>
                 </div>
             </div>
         </div>
@@ -18,18 +18,18 @@
     <div class="container contact-spacing">
         <div class="row">
             <div class="col-md-6 mt-4 mb-4">
-                {{ Html::image("images/herb1.jpg", 'alt text', array('class' => 'img-fluid w100')) }}
+                {{ Html::image("public/images/herb1.jpg", 'alt text', array('class' => 'img-fluid w100')) }}
             </div>
             <div class="col-md-6 text-left mt-4 mb-4 reversible-text">
-                @if( LaravelLocalization::getCurrentLocale() === "ar")                        
+                @if( LaravelLocalization::getCurrentLocale() === "ar")
                 <h6 class="welcome-messgae">
-                    مرحبا بكم فى 
+                    مرحبا بكم فى
                     Bio<span class="light-dark-leaf">A</span>gri!
                 </h6>
                 <h2 class="quote-sub-header mb-4">من نحن !</h2>
                 <p class="mb-4 quote-paragraph">
                     بيو أجري إيجيبت هي شركة عالمية لإنتاج وتصدير الأعشاب و النباتات الطبية والتوابل والبذور و البقوليات…. (عضوية أو غير عضوية )
-                    تأسست الشركة مع قدر كبير من الخبرة في  أعمال الأعشاب 
+                    تأسست الشركة مع قدر كبير من الخبرة في  أعمال الأعشاب
                     لدينا قسم فني علي قدر كافي  من الخبرة  ، مدربين تدريباً عالياً ، ويتلقون التدريب الأكثر حداثة وملائماً لأداء واجباتهم بشكل مثالي
                 </p>
                 @else
@@ -47,21 +47,21 @@
                 </p>
                 @endif
 
-            </div> 
+            </div>
         </div>
     </div>
 </section>
-<section id="misson" class="mt-5 ml-2 mr-2 mb-5  color-back">  
+<section id="misson" class="mt-5 ml-2 mr-2 mb-5  color-back">
     <div class="light-transpert-grey pt-4 pb-4">
         <div class="container pt-3 pb-3 custom-container ">
             <div class="row mt-5 mb-5 mb-2 reversible-form">
                 @if(count($abouts)>0)
-                @foreach($abouts as $about)  
+                @foreach($abouts as $about)
                 @if($about->arabic_name == "عنا")
                 <div class="col-md-6 p-5 book-page reversible-text">
                     <h2 class="quote-sub-header mb-4 welcome-messgae">
                         @if($about->arabic_name == "عنا")
-                        @if( LaravelLocalization::getCurrentLocale() === "ar")                        
+                        @if( LaravelLocalization::getCurrentLocale() === "ar")
                         {{$about->arabic_name}}
                         @else
                         {{$about->english_name}}
@@ -70,7 +70,7 @@
                     </h2>
                     <p class="quote-paragraph">
                         @if($about->arabic_name == "عنا")
-                        @if( LaravelLocalization::getCurrentLocale() === "ar")                        
+                        @if( LaravelLocalization::getCurrentLocale() === "ar")
                         {{$about->arabic_value}}
                         @else
                         {{$about->english_value}}
@@ -81,9 +81,9 @@
                 @endif
                 @if($about->english_name == "Mission" || $about->english_name == "Vission")
                 <div class="col-md-6 p-5 book-page reversible-text">
-                    <h5 class="green-leaf"> 
+                    <h5 class="green-leaf">
                         @if($about->english_name == "Mission" )
-                        @if( LaravelLocalization::getCurrentLocale() === "ar")                        
+                        @if( LaravelLocalization::getCurrentLocale() === "ar")
                         {{$about->arabic_name}}
                         @else
                         {{$about->english_name}}
@@ -92,16 +92,16 @@
                     </h5>
                     <p class="quote-paragraph">
                         @if($about->english_name == "Mission")
-                        @if( LaravelLocalization::getCurrentLocale() === "ar")                        
+                        @if( LaravelLocalization::getCurrentLocale() === "ar")
                         {{$about->arabic_value}}
                         @else
                         {{$about->english_value}}
                         @endif
                         @endif
                     </p>
-                    <h5 class="green-leaf"> 
+                    <h5 class="green-leaf">
                         @if($about->english_name == "Vission")
-                        @if( LaravelLocalization::getCurrentLocale() === "ar")                        
+                        @if( LaravelLocalization::getCurrentLocale() === "ar")
                         {{$about->arabic_name}}
                         @else
                         {{$about->english_name}}
@@ -110,7 +110,7 @@
                     </h5>
                     <p class="quote-paragraph">
                         @if($about->english_name == "Vission")
-                        @if( LaravelLocalization::getCurrentLocale() === "ar")                        
+                        @if( LaravelLocalization::getCurrentLocale() === "ar")
                         {{$about->arabic_value}}
                         @else
                         {{$about->english_value}}
@@ -151,18 +151,18 @@
                                 {{ $aboutAchievement->year }}</span></div>
                     </div>
                     <p class="quote-paragraph reversible-text">
-                        @if( LaravelLocalization::getCurrentLocale() == "ar")         @if($aboutAchievement->arabic_achievement !=null)           
+                        @if( LaravelLocalization::getCurrentLocale() == "ar")         @if($aboutAchievement->arabic_achievement !=null)
                         {{ $aboutAchievement->arabic_achievement}}
                         @endif
                         @else
-                        @if($aboutAchievement->english_achievement !=null)           
+                        @if($aboutAchievement->english_achievement !=null)
                         {{ $aboutAchievement->english_achievement}}
                         @endif
                         @endif
                     </p>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 </section>
 @endif

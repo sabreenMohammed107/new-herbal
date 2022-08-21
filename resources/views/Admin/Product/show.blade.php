@@ -76,7 +76,7 @@
                 <span class=" f600"> {{Lang::get('labels.image')}}:</span>
             </div>
             <div class="col-md-3">
-                {{ Html::image("images/Product/$product->image", 'course', array('class' => 'pb-3 img-fluid')) }}
+                {{ Html::image("public/images/Product/$product->image", 'course', array('class' => 'pb-3 img-fluid')) }}
             </div>
             <div class="col-md-3 reversible-text">
                 <span class=" f600"> {{Lang::get('labels.price')}}:</span>
@@ -119,8 +119,8 @@
             </div>
             <div class="col-md-3">
                 <video width="320" height="240" controls>
-                    <source src="{{ asset('public/images/Product/'.$product->video.'')}}" type="video/mp4">
-                    <source src="{{ asset('public/images/Product/'.$product->video.'')}}" type="video/ogg">
+                    <source src="{{ asset('public/public/images/Product/'.$product->video.'')}}" type="video/mp4">
+                    <source src="{{ asset('public/public/images/Product/'.$product->video.'')}}" type="video/ogg">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -343,7 +343,7 @@
                             @foreach ($product->productImages as $productImage)
                             <tr>
                                 <td>
-                                     {{ Html::image("images/Product/$productImage->image", 'alt text', array('class' => 'pb-3 img-fluid img-size')) }}
+                                     {{ Html::image("public/images/Product/$productImage->image", 'alt text', array('class' => 'pb-3 img-fluid img-size')) }}
                                 </td>
                                 <td>
                                     <i class="fa fa-trash-o tip pointer posdel remove" title="Remove" data-toggle="modal" data-target="#ProductSheetDeleteModal{{$productImage->id}}" ></i>

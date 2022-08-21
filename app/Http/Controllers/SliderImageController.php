@@ -48,7 +48,7 @@ class SliderImageController extends Controller {
         if ($files = $request->file('images')) {
             foreach ($files as $file) {
                 $name = $file->getClientOriginalName();
-                $file->move('images/SliderImage', $name);
+                $file->move('public/images/SliderImage', $name);
                 SliderImage::create(['image' => $name, 'active' => $requestData['active']]);
             }
         }
@@ -72,9 +72,9 @@ class SliderImageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        
+
     }
-    
+
     public function update(Request $request, $id) {
 
         if ($request->get('active') == "on") {
@@ -82,8 +82,8 @@ class SliderImageController extends Controller {
         } else {
             $requestData['active'] = 0;
         }
-    
-        
+
+
         SliderImage::where('id', $id)->update($requestData);
         return redirect('/sliderImage');
     }

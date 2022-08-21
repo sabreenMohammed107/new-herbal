@@ -2,14 +2,14 @@
 @section('content')
 <div  class="button-header mb-4 white-background p-3">
     <div class="row">
-        <div class="col-md-12 reversible-text">                                
-            <a href="{{ LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(),"gallery/create") }}" class="red-button btn  pointer white-text"> 
+        <div class="col-md-12 reversible-text">
+            <a href="{{ LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(),"gallery/create") }}" class="red-button btn  pointer white-text">
                 {{ Lang::get('headings.NewGallery')}}
             </a>
         </div>
     </div>
 </div>
-<div class="white-background content-details">                        
+<div class="white-background content-details">
     <div class="content-header white-text">
         <h4 class="p-3 f16 f400 reversible-text"> {{Lang::get('headings.galleries')}} </h4>
         <div class="clearfix"></div>
@@ -17,7 +17,7 @@
     <div class="p-3"  >
         <div class="row justify-content-end mb-4">
             <div class="col-md-9 reversible-text">
-                <span class="found"> {{Lang::get('headings.Found')}} : 
+                <span class="found"> {{Lang::get('headings.Found')}} :
                     {{$count}}
                 </span>
             </div>
@@ -34,8 +34,8 @@
                             <thead class="white-text thead-background">
                                 <tr>
                                     <th>#</th>
-                                    <th>{{Lang::get('labels.gallery_type')}}</th>   
-                                    <th>{{Lang::get('labels.date')}}</th>   
+                                    <th>{{Lang::get('labels.gallery_type')}}</th>
+                                    <th>{{Lang::get('labels.date')}}</th>
                                     <!--<th><i class="fa fa-trash"></i></th>-->
                                     <th>
                                         <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -44,10 +44,10 @@
                             </thead>
                             <tbody>
                                 <?php $i = 1; ?>
-                                @foreach($galleries as $gallery)                           
-                                <tr>                               
+                                @foreach($galleries as $gallery)
+                                <tr>
                                     <td> <?php echo $i ?></td>
-                                    @if( LaravelLocalization::getCurrentLocale() === "ar")                        
+                                    @if( LaravelLocalization::getCurrentLocale() === "ar")
                                     <td> {{$arabic_names[$gallery->gallery_type_id]}} </td>
                                     @else
                                     <td> {{$english_names[$gallery->gallery_type_id]}} </td>
@@ -61,13 +61,13 @@
                                     <td>
                                         <i class="fa fa-pencil edit" aria-hidden="true"  title="edit" data-toggle="modal" data-target="#EditModal{{$gallery->gallery_type_id}}">
                                         </i>
-                                    </td>  
+                                    </td>
                                 </tr>
                                 <?php $i++; ?>
                                 @endforeach
-                            </tbody> 
+                            </tbody>
                         </table>
-                        @foreach($galleries as $gallery)  
+                        @foreach($galleries as $gallery)
                         <div class="modal fade " style="direction:ltr !important" id="EditModal{{$gallery->gallery_type_id}}" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -89,7 +89,7 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="input-group">
-                                                    @if( LaravelLocalization::getCurrentLocale() === "ar")                        
+                                                    @if( LaravelLocalization::getCurrentLocale() === "ar")
                                                     <input type="text" class="form-control" readonly="" value="{{$arabic_names[$gallery->gallery_type_id]}}" />
                                                     @else
                                                     <input type="text" class="form-control" readonly="" value="{{$english_names[$gallery->gallery_type_id]}}" />
@@ -102,19 +102,19 @@
                                                 <thead class="white-text thead-background">
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>{{Lang::get('labels.image')}}</th>   
-                                                        <th>{{Lang::get('labels.active')}}</th>  
+                                                        <th>{{Lang::get('labels.image')}}</th>
+                                                        <th>{{Lang::get('labels.active')}}</th>
                                                         <th><i class="fa fa-trash"></i></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="galleryTable">
                                                     <?php $i = 1; ?>
-                                                    @foreach($gallery_types[$gallery->gallery_type_id]->galleries as $galleri)                           
-                                                    <tr class="{{$galleri->id}}">  
+                                                    @foreach($gallery_types[$gallery->gallery_type_id]->galleries as $galleri)
+                                                    <tr class="{{$galleri->id}}">
                                                 <input  type='hidden' name='gallery[{{$galleri->id}}]' value="{{$galleri->id}}" />
                                                 <td> <?php echo $i ?></td>
                                                 <td>
-                                                    {{ Html::image("images/Gallery/$galleri->image", 'alt text', array('class' => 'pb-3 img-fluid img-size')) }}
+                                                    {{ Html::image("public/images/Gallery/$galleri->image", 'alt text', array('class' => 'pb-3 img-fluid img-size')) }}
                                                 </td>
                                                 <td>
                                                     <label class="custom-control custom-checkbox">
@@ -157,7 +157,7 @@
         </div>
         <div class="col-md-9">
             <nav class="paginate margin-20 pl-10 pr-10 pt-2 ">
-                {{ $galleries->render() }}  
+                {{ $galleries->render() }}
             </nav>
         </div>
     </div>

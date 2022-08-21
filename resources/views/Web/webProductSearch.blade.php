@@ -2,7 +2,7 @@
     @foreach($products as $product)
     <div class="element-item {{$product->ProductCategory->english_name}}">
         <div class="view relative">
-            {{ Html::image("images/Product/$product->image", 'alt text', array('class' => 'product-image img-fluid')) }}
+            {{ Html::image("public/images/Product/$product->image", 'alt text', array('class' => 'product-image img-fluid')) }}
             <!--<img  src="http://verdure.mikado-themes.com/wp-content/uploads/2018/04/shop-img-1.jpg" class="product-image img-fluid" alt="f" />-->
         </div>
         <div class="product-details p-4">
