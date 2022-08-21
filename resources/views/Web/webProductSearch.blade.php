@@ -1,5 +1,5 @@
 <div class="grid  mt-4 product-list" >
-    @foreach($products as $product) 
+    @foreach($products as $product)
     <div class="element-item {{$product->ProductCategory->english_name}}">
         <div class="view relative">
             {{ Html::image("images/Product/$product->image", 'alt text', array('class' => 'product-image img-fluid')) }}
@@ -7,14 +7,14 @@
         </div>
         <div class="product-details p-4">
             <h5  class="product-title uppercase">
-                @if( LaravelLocalization::getCurrentLocale() === "ar")                        
+                @if( LaravelLocalization::getCurrentLocale() === "ar")
                 <a>{{$product->arabic_name}} </a>
                 @else
                 <a>{{$product->english_name}} </a>
                 @endif
             </h5>
             <p class="product-paragph pl-2 pr-2 pt-1 pb-1">
-                @if( LaravelLocalization::getCurrentLocale() === "ar")       
+                @if( LaravelLocalization::getCurrentLocale() === "ar")
                 <?php echo mb_substr($product->arabic_overview, 0, 50, "UTF-8"); ?>
                 <span class="d-block" >
                     <?php echo '...'; ?>
@@ -33,6 +33,6 @@
     </div>
     @endforeach
 </div>
-<script  src="{{ asset('js/jquery.easing.1.3.js') }}"  type="text/javascript"></script>
-<script  src="{{ asset('js/isotope.pkgd.min.js') }}"  type="text/javascript"></script>
-<script  src="{{ asset('js/grid.js') }}"  type="text/javascript"></script>
+<script  src="{{ asset('public/js/jquery.easing.1.3.js') }}"  type="text/javascript"></script>
+<script  src="{{ asset('public/js/isotope.pkgd.min.js') }}"  type="text/javascript"></script>
+<script  src="{{ asset('public/js/grid.js') }}"  type="text/javascript"></script>

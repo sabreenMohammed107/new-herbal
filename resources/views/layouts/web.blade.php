@@ -14,36 +14,36 @@ and open the template in the editor.
         <meta name="keywords" content="freelancer,front-end developer,HTML,CSS,JavaScript , part time">
         <meta name="author" content="Nourhan Sherief">
         <!--<link href="https://necolas.github.io/normalize.css/7.0.0/normalize.css" rel="stylesheet" />-->
-        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-        <link href="{{ asset('font-awesome/css/font-awesome.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/owl.theme.default.css') }}" rel="stylesheet">
-        <!--<link href="{{ asset('css/animate.css/animate.min.css') }}" rel="stylesheet">-->
-        <link href="{{ asset('css/template.css') }}" rel="stylesheet">
-        <link href="{{ asset('js/revolution/css/settings.css') }}" rel="stylesheet">
-        <link href="{{ asset('js/revolution/css/rev-slider.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/common.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/customResponsive.css') }}" rel="stylesheet">
+        <link href="{{ asset('public/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('public/css/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('public/css/main.css') }}" rel="stylesheet">
+        <link href="{{ asset('public/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+        <link href="{{ asset('public/css/owl.carousel.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('public/css/owl.theme.default.css') }}" rel="stylesheet">
+        <!--<link href="{{ asset('public/css/animate.css/animate.min.css') }}" rel="stylesheet">-->
+        <link href="{{ asset('public/css/template.css') }}" rel="stylesheet">
+        <link href="{{ asset('public/js/revolution/css/settings.css') }}" rel="stylesheet">
+        <link href="{{ asset('public/js/revolution/css/rev-slider.css') }}" rel="stylesheet">
+        <link href="{{ asset('public/css/common.css') }}" rel="stylesheet">
+        <link href="{{ asset('public/css/customResponsive.css') }}" rel="stylesheet">
         @if( LaravelLocalization::getCurrentLocale() === "ar")
-        <link href="{{ asset('css/ar_style.css') }}" rel="stylesheet">
+        <link href="{{ asset('public/css/ar_style.css') }}" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Amiri|Scheherazade" rel="stylesheet">
         @else
         @endif
-        <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('images/fav/apple-icon-57x57.png') }}">
-        <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('images/fav/apple-icon-60x60.png') }}">
-        <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('images/fav/apple-icon-72x72.png') }}">
-        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('images/fav/apple-icon-76x76.png') }}">
-        <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('images/fav/apple-icon-114x114.png') }}">
-        <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('images/fav/apple-icon-120x120.png') }}">
-        <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('images/fav/apple-icon-144x144.png') }}">
-        <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('images/fav/apple-icon-152x152.png') }}">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/fav/apple-icon-180x180.png') }}">
-        <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('images/fav/android-icon-192x192.png') }}">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/fav/favicon-32x32.png') }}">
-        <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('images/fav/favicon-96x96.png') }}">
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/fav/favicon-16x16.png') }}">
+        <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('public/images/fav/apple-icon-57x57.png') }}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('public/images/fav/apple-icon-60x60.png') }}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('public/images/fav/apple-icon-72x72.png') }}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('public/images/fav/apple-icon-76x76.png') }}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('public/images/fav/apple-icon-114x114.png') }}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('public/images/fav/apple-icon-120x120.png') }}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('public/images/fav/apple-icon-144x144.png') }}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('public/images/fav/apple-icon-152x152.png') }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('public/images/fav/apple-icon-180x180.png') }}">
+        <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('public/images/fav/android-icon-192x192.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('public/images/fav/favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('public/images/fav/favicon-96x96.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('public/images/fav/favicon-16x16.png') }}">
         <link rel="manifest" href="/manifest.json">
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
@@ -219,21 +219,21 @@ and open the template in the editor.
             </div>
         </section>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <!--<script  src="{{ asset('js/jquery-3.2.1.slim.min.js') }}"  type="text/javascript"></script>-->
-        <script  src="{{ asset('js/myjs.js') }}"  type="text/javascript"></script>
+        <!--<script  src="{{ asset('public/js/jquery-3.2.1.slim.min.js') }}"  type="text/javascript"></script>-->
+        <script  src="{{ asset('public/js/myjs.js') }}"  type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-        <script  src="{{ asset('js/bootstrap.min.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/bootstrap.min.js') }}"  type="text/javascript"></script>
 
-        <script  src="{{ asset('js/revolution/js/jquery.themepunch.tools.min.js') }}"  type="text/javascript"></script>
-        <script  src="{{ asset('js/revolution/js/jquery.themepunch.revolution.min.js.js') }}"  type="text/javascript"></script>
-        <script  src="{{ asset('js/rev-slider.js') }}"  type="text/javascript"></script>
-        <script  src="{{ asset('js/revolution/js/extensions/revolution.extension.carousel.min.js') }}"  type="text/javascript"></script>
-        <script  src="{{ asset('js/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"  type="text/javascript"></script>
-        <script  src="{{ asset('js/revolution/js/extensions/revolution.extension.actions.min.js') }}"  type="text/javascript"></script>
-        <script  src="{{ asset('js/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}"  type="text/javascript"></script>
-        <script  src="{{ asset('js/revolution/js/extensions/revolution.extension.kenburn.min.js') }}"  type="text/javascript"></script>
-        <script  src="{{ asset('js/revolution/js/extensions/revolution.extension.navigation.min.js') }}"  type="text/javascript"></script>
-        <script  src="{{ asset('js/revolution/js/extensions/revolution.extension.parallax.min.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/revolution/js/jquery.themepunch.tools.min.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/revolution/js/jquery.themepunch.revolution.min.js.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/rev-slider.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/revolution/js/extensions/revolution.extension.carousel.min.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/revolution/js/extensions/revolution.extension.actions.min.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/revolution/js/extensions/revolution.extension.kenburn.min.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/revolution/js/extensions/revolution.extension.navigation.min.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/revolution/js/extensions/revolution.extension.parallax.min.js') }}"  type="text/javascript"></script>
         <!--        <script src="js/revolution/js/jquery.themepunch.tools.min.js" type="text/javascript"></script>
                 <script src="js/revolution/js/jquery.themepunch.revolution.min.js.js" type="text/javascript"></script>
                 <script src="js/rev-slider.js" type="text/javascript"></script>
@@ -260,9 +260,9 @@ $(document).on('scroll', function ()
 //    }
 });</script>
 
-        <script  src="{{ asset('js/owl.carousel.min.js') }}"  type="text/javascript"></script>
-        <script  src="{{ asset('js/jquery.owl-filter.js') }}"  type="text/javascript"></script>
-        <script  src="{{ asset('js/basic-js.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/owl.carousel.min.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/jquery.owl-filter.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/basic-js.js') }}"  type="text/javascript"></script>
 
         <script>
 $(function () {
@@ -294,9 +294,9 @@ $(function () {
 });</script>
         <!---->
 
-        <script  src="{{ asset('js/jquery.easing.1.3.js') }}"  type="text/javascript"></script>
-        <script  src="{{ asset('js/isotope.pkgd.min.js') }}"  type="text/javascript"></script>
-        <script  src="{{ asset('js/grid.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/jquery.easing.1.3.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/isotope.pkgd.min.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/grid.js') }}"  type="text/javascript"></script>
 <!--        <script src="js/jquery.easing.1.3.js"></script>
         <script src="js/isotope.pkgd.min.js" type="text/javascript"></script>
         <script src="js/grid.js" type="text/javascript"></script>-->
@@ -380,13 +380,13 @@ owlCategory.owlCarousel({
 
         </script>
 
-        <script type="text/javascript" src="{{ asset('js/webAjax.js') }}">
+        <script type="text/javascript" src="{{ asset('public/js/webAjax.js') }}">
         </script>
         <script type="text/javascript">
             var galleryTypeImages = "{{ LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(),'galleryTypeImages') }}";
             var webProductSearch = "{{ LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(),'webProductSearch') }}";
         </script>
-        <script  src="{{ asset('js/jssor.slider-27.5.0.min.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/jssor.slider-27.5.0.min.js') }}"  type="text/javascript"></script>
 
         <script type="text/javascript">
             jQuery(document).ready(function ($) {

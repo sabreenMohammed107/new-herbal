@@ -12,14 +12,14 @@ and open the template in the editor.
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
-        <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-        <!--<link href="{{ asset('css/prism.css') }}" rel="stylesheet">-->
-        <link href="{{ asset('css/chosen.css') }}" rel="stylesheet">
-        <link href="{{ asset('font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+        <link href="{{ asset('public/css/main.css') }}" rel="stylesheet">
+        <!--<link href="{{ asset('public/css/prism.css') }}" rel="stylesheet">-->
+        <link href="{{ asset('public/css/chosen.css') }}" rel="stylesheet">
+        <link href="{{ asset('public/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
         @if( LaravelLocalization::getCurrentLocale() == "ar")
-        <link href="{{ asset('css/ar_style.css') }}" rel="stylesheet">
+        <link href="{{ asset('public/css/ar_style.css') }}" rel="stylesheet">
         @endif
-        <link href="{{ asset('css/common.css') }}" rel="stylesheet">
+        <link href="{{ asset('public/css/common.css') }}" rel="stylesheet">
     </head>
     <body>
         <div class=" full-height">
@@ -28,7 +28,7 @@ and open the template in the editor.
                     <nav class="row main-navbar white-background">
                         <div class="col-md-4 brand">
                             <a class="navbar-brand" href="#">
-                                <img src="{{ asset('images/logo.png') }}"  class="img-fluid bubble" width="100" alt="Senior Steps"/>
+                                <img src="{{ asset('public/images/logo.png') }}"  class="img-fluid bubble" width="100" alt="Senior Steps"/>
                             </a>
                         </div>
                         <div class="col-md-4 text-right">
@@ -169,11 +169,11 @@ and open the template in the editor.
                 </div>
             </div>
         </div>
-        <script  src="{{ asset('js/jquery-3.2.1.slim.min.js') }}"  type="text/javascript"></script>
-        <script  src="{{ asset('js/popper.min.js') }}"  type="text/javascript"></script>
-        <script  src="{{ asset('js/bootstrap.min.js') }}"  type="text/javascript"></script>
-        <script  src="{{ asset('js/chosen.jquery.js') }}"  type="text/javascript"></script>
-        <script  src="{{ asset('js/prism.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/jquery-3.2.1.slim.min.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/popper.min.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/bootstrap.min.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/chosen.jquery.js') }}"  type="text/javascript"></script>
+        <script  src="{{ asset('public/js/prism.js') }}"  type="text/javascript"></script>
         <script type="text/javascript">
 $('.branch-chosen-select').chosen({no_results_text: "لايوجد نتايج", ltr: true});
         </script>
@@ -191,8 +191,8 @@ $('.branch-chosen-select').chosen({no_results_text: "لايوجد نتايج", l
         </script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-        <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
-        <script type="text/javascript" src="{{ asset('js/ajax.js') }}">
+        <script type="text/javascript" src="{{ asset('public/vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('public/js/ajax.js') }}">
         </script>
         <script type="text/javascript">
             var customerReviewDelete = "{{ LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(),'customerReview/{customerReview}') }}";
