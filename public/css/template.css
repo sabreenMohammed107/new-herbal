@@ -1,0 +1,44 @@
+#demos .owl-carousel .item {
+    /*background: #4dc7a0 none repeat scroll 0 0;*/
+    /*height: 20rem;*/
+    padding: 1rem;
+}
+#demos .owl-carousel .item{
+	transition: .8s;
+	-webkit-transition: .8s;
+	transform: translateX(0);
+	-webkit-transform: translateX(0);
+	opacity: 1;
+}
+#demos .owl-carousel .item.__loading{
+	opacity: 0;
+	transform: translateX(40px);
+	-webkit-transform: translateX(40px);
+}
+#demos .owl-carousel .item h4{
+	margin: 0 0 10px 0;
+}
+.btn-filter-wrap{
+	margin-bottom: 10px;
+}
+.btn-filter-wrap .btn-filter{
+	color: #000;
+    text-align: center;
+    padding: 10px;
+    text-transform: capitalize;
+    border: 0 !important;
+    outline: 0 !important;
+    cursor: pointer;
+    letter-spacing: 0.09em;
+}
+/*.btn-filter.btn-active{
+	    background: #ac2925;
+	color: #FFF;
+}*/
+
+.site-title{
+	margin-bottom: 40px;
+}
+.__doc{
+	margin-top: 50px;
+}

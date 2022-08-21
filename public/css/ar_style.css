@@ -1,0 +1,100 @@
+body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    overflow-x: hidden;
+    font-family: 'Amiri', serif;
+    line-height: 1.49;
+      font-size: 17px;
+    line-height: 26px;
+    font-weight: 300;
+    overflow-x: hidden!important;
+    -webkit-font-smoothing: antialiased;
+    background-color:#fff;
+} 
+.reversible-form
+{
+  direction: rtl !important;
+}
+.reversible-left-form
+{
+    direction:ltr !important
+}
+.reversible-text
+{
+    text-align:right !important;
+}
+.left-reversible-text
+{
+    text-align:left !important;
+}
+.modal-footer>:not(:first-child) {
+    margin-right: .25rem;
+}
+.login-button
+{
+     float: left !important; 
+    margin-left: 7.5% !important; 
+}
+.custom-control {
+     margin-right:0px !important; 
+}
+/**************/
+.isotope .isotope-item {
+  -webkit-transition-property: right, top, -webkit-transform, opacity;
+     -moz-transition-property: right, top, -moz-transform, opacity;
+      -ms-transition-property: right, top, -ms-transform, opacity;
+       -o-transition-property: right, top, -o-transform, opacity;
+          transition-property: right, top, transform, opacity;
+}
+.event-list li
+{
+        padding-right: 1rem;
+}
+.event-list li:before {
+    right: -1.3em;
+   
+}
+.event-list ol {
+    text-align: right;
+    padding-right: 0.5rem;
+}
+.number-style {
+    margin-right: 5px;
+    font-size: 1.5rem;
+    background-color: #4d996a;
+    color: white;
+    font-weight: bold;
+    padding: 1px 8px;
+    border-radius: 3px;
+}
+.custom-navbar>ul>li {
+    border-left: 1px solid rgb(234, 235, 234);
+    border-right:none !important;
+}
+.custom-navbar>ul>li:first-child {
+     padding-right: 0 !important; 
+}
+.arabic-line-height
+{
+    line-height: 2.5rem;
+}
+.useful-title:after {
+   right: 0px;
+}
+/******** responsivness ******************/
+@media (max-width: 575.98px) { 
+    body {
+        font-size: 13px;
+    }
+}
+@media (min-width: 991.99px) and (max-width: 1199.98px)
+{
+
+    .custom-navbar>ul>li>a {
+        font-size: 1rem;
+    }
+}
